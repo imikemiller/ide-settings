@@ -1,0 +1,12 @@
+<templateSet group="PHP">
+  <template name="clb" value="function($END$){&#10;    &#10;}" shortcut="SPACE" description="Function callback" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+  <template name="pysy" value="$obj = $this;&#10;\Psy\Shell::debug(get_defined_vars());" description="Old style PyShell" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="PHP" value="true" />
+    </context>
+  </template>
+</templateSet>

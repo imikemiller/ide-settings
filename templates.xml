@@ -1,0 +1,20 @@
+<application>
+  <component name="TemplateSettings">
+    <option name="deletedKeys">
+      <list>
+        <TemplateKey>
+          <option name="groupName" value="JavaScript" />
+          <option name="key" value="importitems" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="JavaScript" />
+          <option name="key" value="importns" />
+        </TemplateKey>
+        <TemplateKey>
+          <option name="groupName" value="JavaScript" />
+          <option name="key" value="importdefault" />
+        </TemplateKey>
+      </list>
+    </option>
+  </component>
+</application>

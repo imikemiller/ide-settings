@@ -1,0 +1,19 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping ext="groovy" type="Handlebars/Mustache" />
+      <mapping pattern="es:5b068090ea410" type="PLAIN_TEXT" />
+      <mapping pattern=".env.development" type="PLAIN_TEXT" />
+      <mapping pattern="es:5b06710d0aa62" type="PLAIN_TEXT" />
+      <mapping pattern=".ebextensions" type="PLAIN_TEXT" />
+      <mapping pattern="babelrc" type="PLAIN_TEXT" />
+      <mapping pattern="Procfile" type="PLAIN_TEXT" />
+      <mapping pattern="es:5b06b78d13313" type="PLAIN_TEXT" />
+      <mapping ext="flf" type="PLAIN_TEXT" />
+      <mapping ext="backup" type="PLAIN_TEXT" />
+      <mapping ext="sqlite3" type="PLAIN_TEXT" />
+      <mapping ext="ttf" type="PLAIN_TEXT" />
+      <mapping ext="config" type="PLAIN_TEXT" />
+    </extensionMap>
+  </component>
+</application>

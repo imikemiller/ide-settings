@@ -1,0 +1,96 @@
+<templateSet group="JavaScript">
+  <template name="fnv" value="($MODULE_VAR$) =&gt;{&#10;  $END$&#10;}" description="Verbose ECM6 fn" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE_VAR" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="re" value="const $VARKIND$ = require('$MODULE$');&#10;$END$" shortcut="SPACE" description="js require" toReformat="false" toShortenFQNames="true">
+    <variable name="VARKIND" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="MODULE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="()" value="($VARKIND$) =&gt; {$END$}" description="Arrow function" toReformat="false" toShortenFQNames="true">
+    <variable name="VARKIND" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="impi" value="import {$ITEM$$END$} from &quot;$MODULE$&quot;;&#10;" description="Import statement - import {b} from 'a'" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ITEM" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="impa" value="import * as $ITEM$ from &quot;$MODULE$&quot;;&#10;$END$" description="Import statement - import * as b from 'a'" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ITEM" expression="jsSuggestImportedEntityName()" defaultValue="Namespace" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="imp" value="import $ITEM$ from &quot;$MODULE$&quot;;&#10;$END$" description="Import statement - import b from 'a'" toReformat="true" toShortenFQNames="true">
+    <variable name="MODULE" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <variable name="ITEM" expression="jsSuggestImportedEntityName()" defaultValue="Namespace" alwaysStopAt="true" />
+    <context>
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="exc" value="export const $NAME$ = '$NAME$';" description="export constant" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="exa" value="export function $NAME$($ARG$){&#10;    return {&#10;        type:$TYPE$,&#10;        payload:$ARG$&#10;    }&#10;}&#10;&#10;export function $NAME$Success(data){&#10;    return {&#10;        type:$TYPE$_SUCCESS,&#10;        payload:data&#10;    }&#10;}&#10;&#10;export function $NAME$Failure(error){&#10;    return {&#10;        type:$TYPE$_FAILURE,&#10;        payload:error&#10;    }&#10;}" description="export action function" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ARG" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TYPE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="mtst" value="const should = require('should');&#10;const artistFactory = require('../../models/factories/artist.factory');&#10;const organisationFactory = require('../../models/factories/organisation.factory');&#10;const mediaFactory = require('../../models/factories/media.factory');&#10;const userFactory = require('../../models/factories/user.factory');&#10;const exhibitionFactory = require('../../models/factories/exhibition.factory');&#10;const exhibitFactory = require('../../models/factories/exhibit.factory');&#10;const tokenUtil = require('../../utils/token');&#10;const request = require('supertest');&#10;const server = require('../../server'); //reference to you app.js file&#10;const models = require('../../models');&#10;&#10;describe('$FILENAME$',()=&gt;{&#10;    let user, auth;&#10;    before(async ()=&gt;{&#10;        user = await  models.User.findByPk(1);&#10;        auth = await  tokenUtil.auth(models.Token, user, 'default');&#10;    })&#10;    it('$TEST$',()=&gt;{&#10;        return request(server)&#10;      .set('Accept', 'application/json')&#10;      .set('Authorization', `Bearer ${auth}`);&#10;    });&#10;})" description="Mocha test" toReformat="true" toShortenFQNames="true">
+    <variable name="FILENAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="TEST" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="red" value="import { $NAME$, $NAME$_FAILURE, $NAME$_SUCCESS } from '../actions/$LNAME$.actions';&#10;&#10;const INITIAL_STATE = {&#10;    loading:false,&#10;    $LNAME$:[],&#10;    error:null&#10;};&#10;&#10;export default function (state = INITIAL_STATE, action) {&#10;  switch (action.type) {&#10;    case $NAME$:&#10;      return {...state, loading:true};&#10;&#10;    case $NAME$_SUCCESS:&#10;    console.log($NAME$_SUCCESS,action);&#10;      return {...state,loading:false,$LNAME$:[...action.payload.data,...state.$LNAME$]};&#10;&#10;    case $NAME$_FAILURE:&#10;      return {...state,loading:false,error:action.payload.data};&#10;&#10;    default:&#10;      return state;&#10;  }&#10;}" description="Redux reducer" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="LNAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="rec" value="case $NAME$:&#10;    return {...state};&#10;case $NAME$_SUCCESS:&#10;    return {...state};&#10;case $NAME$_FAILURE:&#10;    return {...state};" description="Reducer cases" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="log" value="console.debug($NAME$,'$NAME$');" description="console.log" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="ita" value="it('$NAME$',()=&gt;{&#10;    const expectedAction = {&#10;        type:actions.$ACTION$,&#10;        payload:$PAYLOAD$&#10;    }&#10;    expect(actions.$NAME$($PAYLOAD$)).toEqual(expectedAction);&#10;});" description="it action test" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="ACTION" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="PAYLOAD" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="mod" value="module.exports = $MODULE$" description="module exports" toReformat="false" toShortenFQNames="true">
+    <variable name="MODULE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+</templateSet>
