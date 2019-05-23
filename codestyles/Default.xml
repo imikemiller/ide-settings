@@ -2,6 +2,7 @@
   <JSCodeStyleSettings>
     <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
     <option name="FORCE_SEMICOLON_STYLE" value="true" />
+    <option name="SPACE_BEFORE_FUNCTION_LEFT_PARENTH" value="false" />
   </JSCodeStyleSettings>
   <TypeScriptCodeStyleSettings>
     <option name="USE_SEMICOLON_AFTER_STATEMENT" value="false" />
@@ -9,8 +10,6 @@
   </TypeScriptCodeStyleSettings>
   <codeStyleSettings language="JavaScript">
     <option name="SPACE_WITHIN_PARENTHESES" value="true" />
-    <option name="SPACE_BEFORE_METHOD_CALL_PARENTHESES" value="true" />
-    <option name="SPACE_BEFORE_METHOD_PARENTHESES" value="true" />
     <indentOptions>
       <option name="INDENT_SIZE" value="2" />
       <option name="CONTINUATION_INDENT_SIZE" value="2" />
